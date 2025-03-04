@@ -5,7 +5,7 @@ import { createWindow } from './helpers'
 import "./ipc/users/user.handlers"
 import "./ipc/guns/gun.handlers"
 import "./ipc/targets/target.handlers"
-import net from 'net'  // Импортируем модуль для работы с TCP
+import net from 'net'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -18,7 +18,6 @@ if (isProd) {
 ;(async () => {
   await app.whenReady()
 
-  // Запускаем основной окно
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
